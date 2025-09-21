@@ -4,7 +4,7 @@ def fib(n):
     else:
         val=fib(n-1)+fib(n-2)
         return(val)
-n=int(input("Enter the how many terms of fibonacci to be print:"))
+n=int(input("Enter how many terms of fibonacci series to be print:"))
 print("\nFibonacci series :")
 for i in range(n):
     result=fib(i)
