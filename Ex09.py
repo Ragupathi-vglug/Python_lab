@@ -16,7 +16,7 @@ class Complex:
           print(self.real,"+i",self.image)
 
 c1=Complex(10,20)
-c2=Complex(5,15)
+c2=Complex(3,10)
 c3=Complex()
 c4=Complex()
 c3=c1+c2
@@ -29,5 +29,5 @@ c2.display()
 
 print("\nAddition of Complex Number C1 and C2 is :",end="")
 c3.display()
-print("\nSubtraction of Complex Number C1 and C2 is :",end="")
+print("\nSubtraction of Complex Number C1 from C2 is :",end="")
 c4.display()
