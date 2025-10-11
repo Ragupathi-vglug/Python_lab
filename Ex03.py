@@ -8,7 +8,5 @@ for i in range(len):
             marks[i]=marks[j]
             marks[j]=temp
 result=marks[k-1]
-print(marks)
-marks.sort(reverse=True)
 print("Decending order of the list :",marks)
 print(f"{k} Largest number is {result}")
