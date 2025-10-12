@@ -1,8 +1,7 @@
 import pymongo
 
 # Create Mongo connection
-print("\n")
-print("\n")
+
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
 # Create database
@@ -11,30 +10,28 @@ mydb = myclient["Emp"]
 # Check if DB exists
 dblist = myclient.list_database_names()
 if "Emp" in dblist:
-    print("\tThe database exists.")
+    print("The database exists.")
 else:
-    print("\tThis DB is not available")
+    print("This DB is not available")
 
 # Create collection
 mycol = mydb["emp1"]
 clist = mydb.list_collection_names()
-print("\t")
 if "emp1" in clist:
-    print("\tThe Collection exists.")
+    print("The Collection exists.")
 else:
-    print("\tCollection is not available")
+    print("Collection is not available")
 
 # Insert a single document
 mydict = {"name": "raman", "age": 20, "dept": "IT"}
 mycol.insert_one(mydict)
-print("\t")
-print("\tInserted one document successfully.")
+print("Inserted one document successfully.")
 
 # Read the document
 x = mycol.find_one()
-print("\n\tRead a single document after insertion")
-print("\t----------------------------------------")
-print("\t",x)
+print("\nRead a single document after insertion")
+print("----------------------------------------")
+print(x)
 
 # Insert multiple documents
 mylist = [
@@ -44,40 +41,38 @@ mylist = [
     {"name": "raman", "Design": "Manager", "Dept": "Mech"}
 ]
 mycol.insert_many(mylist)
-print("\n\tInserted multiple documents successfully.")
+print("\nInserted multiple documents successfully.")
 
 # Read all documents
-print("\n\tRead all the documents after insertion")
+print("\nRead all the documents after insertion")
 print("----------------------------------------")
 x = mycol.find()
 for i in x:
-    print("\t",i)
+    print(i)
 
 # Delete a single document
 dlist = {"name": "raman"}
 mycol.delete_one(dlist)
-print("\n\tOne document deleted...")
+print("\nOne document deleted...")
 
 # Read remaining documents
-print("\n\tDocuments after deleting one record")
+print("\nDocuments after deleting one record")
 print("----------------------------------------")
 x = mycol.find()
 for i in x:
-    print("\t",i)
+    print(i)
 
 # Delete many documents
 mycol.delete_many(dlist)
-print("\n\tDocuments deleted successfully (all with name 'raman').")
+print("\nDocuments deleted successfully (all with name 'raman').")
 
 # Read remaining documents
-print("\n\tDocuments after deleting many records")
+print("\nDocuments after deleting many records")
 print("----------------------------------------")
 x = mycol.find()
 for i in x:
-    print("\t",i)
+    print(i)
 
 # Drop the collection
 mycol.drop()
-print("\n\tCollection deleted successfully.")
-print("\n")
-print("\n")
+print("\nCollection deleted successfully.")
